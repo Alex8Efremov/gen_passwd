@@ -1,0 +1,10 @@
+[Unit]
+Description=gen simple password length 32
+
+[Service]
+User=root
+ExecStart=<path to binary>
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

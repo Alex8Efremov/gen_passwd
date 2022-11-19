@@ -1,0 +1,9 @@
+version: "3.7"
+services:
+  gen_passwd:
+    container_name: ${SERVICE}
+    image: ${SERVICE}
+    environment:
+      PORT: ${PORT}
+    ports:
+      - ${PORT}:${PORT}
