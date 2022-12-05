@@ -1,3 +1,5 @@
+include .env
+
 SHELL=/bin/bash
 APP=app
 export PORT=3200
@@ -30,4 +32,4 @@ docker-run: docker-down
 docker-down:
 	docker compose down
 
-docker-all: docker-build docker-run
+d-all: docker-build docker-down docker-run

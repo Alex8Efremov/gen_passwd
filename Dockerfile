@@ -10,5 +10,6 @@ RUN upx ./app
 
 FROM scratch
 COPY --from=build /build/app /app
+COPY --from=0 /etc/passwd /etc/passwd
 
 CMD ["/app"]

@@ -5,5 +5,11 @@ services:
     image: ${SERVICE}
     environment:
       PORT: ${PORT}
-    ports:
-      - ${PORT}:${PORT}
+    # ports:
+    #   - ${PORT}:${PORT}
+    labels:
+      traefik.enable: "true"
+      traefik.http.routers.gen_passwd.rule: "Host(`${DOMAIN}`)"
+      traefik.http.routers.gen_passwd.entrypoints: "websecure"
+      traefik.http.routers.gen_passwd.service: "gen_passwd"
+      traefik.http.services.gen_passwd.loadbalancer.server.port: "${PORT}"
